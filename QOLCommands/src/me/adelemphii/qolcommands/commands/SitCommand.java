@@ -1,4 +1,4 @@
-package me.adelemphii.qolcommands;
+package me.adelemphii.qolcommands.commands;
 
 import org.bukkit.World;
 import org.bukkit.command.Command;

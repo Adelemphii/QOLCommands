@@ -3,6 +3,9 @@ package me.adelemphii.qolcommands;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.adelemphii.qolcommands.commands.ConfigReloadCommand;
+import me.adelemphii.qolcommands.commands.RollCommand;
+import me.adelemphii.qolcommands.commands.SitCommand;
 import me.adelemphii.qolcommands.events.SitEvents;
 
 public class QOLCommands extends JavaPlugin {

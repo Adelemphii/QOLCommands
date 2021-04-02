@@ -1,9 +1,11 @@
-package me.adelemphii.qolcommands;
+package me.adelemphii.qolcommands.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+
+import me.adelemphii.qolcommands.QOLCommands;
 
 public class ConfigReloadCommand implements CommandExecutor {
 	
