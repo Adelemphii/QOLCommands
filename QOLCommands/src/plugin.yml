@@ -1,0 +1,13 @@
+main: me.adelemphii.qolcommands.QOLCommands
+name: QOLCommands
+author: Adelemphii
+version: 1.0
+api-version: 1.13
+
+commands:
+  sit:
+    description: Using /sit you can sit where you are!
+  roll:
+    description: Using /roll <number> will allow you to roll a random number for everyone to see!
+  qolreload:
+    description: Used to reload the config file!
