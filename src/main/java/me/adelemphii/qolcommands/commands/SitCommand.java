@@ -21,11 +21,12 @@ public class SitCommand implements CommandExecutor {
 		
 		if(cmd.getName().equalsIgnoreCase("sit")) {
 			World world = player.getWorld();
-			ArmorStand as = (ArmorStand) world.spawnEntity(player.getLocation().subtract(0, 1.75, 0), EntityType.ARMOR_STAND);
+			ArmorStand as = (ArmorStand) world.spawnEntity(player.getLocation().subtract(0, 1.5, 0), EntityType.ARMOR_STAND);
 			
     		as.addPassenger(player);
     		as.setInvisible(true);
     		as.setCollidable(false);
+    		as.setInvulnerable(true);
     		as.setGravity(false);
     		as.setCustomName("sitting");
     		as.setCustomNameVisible(false);

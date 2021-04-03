@@ -14,7 +14,7 @@ public class SitEvents implements Listener {
 		// Check if the entity which was dismounted from is an armorstand
 		if(event.getDismounted().getType() == EntityType.ARMOR_STAND) {
 			ArmorStand armorStand = (ArmorStand) event.getDismounted();
-			// Check that the armorstand's name is "tazed!"
+
 			if(armorStand.getCustomName().equalsIgnoreCase("sitting")) {
 				if(event.getEntity() instanceof Player) {
 					armorStand.remove();
