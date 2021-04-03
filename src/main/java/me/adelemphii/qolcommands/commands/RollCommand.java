@@ -25,8 +25,6 @@ public class RollCommand implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
-		// THIS CODE IS SO FUCKING UGLY I'M GOING TO SCREAM
-		
 		if(cmd.getName().equalsIgnoreCase("roll")) {
 			if(args.length == 1) {
 				if(isNum(args[0])) {
