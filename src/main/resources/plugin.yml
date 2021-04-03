@@ -1,7 +1,7 @@
 main: me.adelemphii.qolcommands.QOLCommands
 name: QOLCommands
 author: Adelemphii
-version: 1.0
+version: ${project.version}
 api-version: 1.13
 
 commands:

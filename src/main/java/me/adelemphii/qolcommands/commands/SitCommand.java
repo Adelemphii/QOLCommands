@@ -14,6 +14,7 @@ public class SitCommand implements CommandExecutor {
 		
 		if(!(sender instanceof Player)) {
 			sender.sendMessage("Players only!");
+			return true;
 		}
 		
 		Player player = (Player) sender;
