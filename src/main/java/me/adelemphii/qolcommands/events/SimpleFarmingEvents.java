@@ -24,12 +24,11 @@ public class SimpleFarmingEvents implements Listener {
 
 	@EventHandler
 	public void onInteract(PlayerInteractEvent event) {
+		// If simple-farming is set to true, run the rest of the checks
 		if(plugin.getConfig().getBoolean("simple-farming")) {
 			if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				Block block = event.getClickedBlock();
 				if (block.getBlockData() instanceof Ageable) {
-
-					if(block.getType() == Material.MELON_SEEDS || block.getType() == Material.PUMPKIN_SEEDS) return;
 
 					Ageable age = (Ageable) block.getBlockData();
 					if (age.getAge() != age.getMaximumAge()) return;

@@ -5,6 +5,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.spigotmc.event.entity.EntityDismountEvent;
 
 public class SitEvents implements Listener {
@@ -15,6 +16,8 @@ public class SitEvents implements Listener {
 		if(event.getDismounted().getType() == EntityType.ARMOR_STAND) {
 			ArmorStand armorStand = (ArmorStand) event.getDismounted();
 
+			// If the armorstand has the name "sitting", remove it
+			// This prevents random armorstands being everywhere.
 			if(armorStand.getCustomName().equalsIgnoreCase("sitting")) {
 				if(event.getEntity() instanceof Player) {
 					armorStand.remove();

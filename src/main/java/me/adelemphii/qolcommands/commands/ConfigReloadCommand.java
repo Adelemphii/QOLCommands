@@ -17,7 +17,7 @@ public class ConfigReloadCommand implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
-		if(sender.hasPermission("qolcommands.admin")) {
+		if(sender.hasPermission("qolcommands.admin") || sender.isOp()) {
 			if(cmd.getName().equalsIgnoreCase("qolreload")) {
 				plugin.reloadConfig();
 				sender.sendMessage(ChatColor.DARK_RED + "[QOLCommands] " + ChatColor.RED + "" + ChatColor.ITALIC + "Config Reloaded!");

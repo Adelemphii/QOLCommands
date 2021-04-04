@@ -8,6 +8,10 @@ commands:
   sit:
     description: Using /sit you can sit where you are!
   roll:
-    description: Using /roll <number> will allow you to roll a random number for everyone to see!
+    description: Using /roll <number> will allow you to roll a random number for everyone in range to see!
   qolreload:
     description: Used to reload the config file!
+  broadcastroll:
+    description: Using /broadcastroll <number> will allow you to roll a random number but it will broadcast to everyone on the server!
+    aliases:
+      - broll
