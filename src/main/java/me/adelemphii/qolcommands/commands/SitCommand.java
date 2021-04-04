@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 
 public class SitCommand implements CommandExecutor {
 
+	@SuppressWarnings("deprecation")
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
 		if(!(sender instanceof Player)) {

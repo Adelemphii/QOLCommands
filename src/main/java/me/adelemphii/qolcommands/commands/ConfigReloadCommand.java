@@ -21,9 +21,11 @@ public class ConfigReloadCommand implements CommandExecutor {
 			if(cmd.getName().equalsIgnoreCase("qolreload")) {
 				plugin.reloadConfig();
 				sender.sendMessage(ChatColor.DARK_RED + "[QOLCommands] " + ChatColor.RED + "" + ChatColor.ITALIC + "Config Reloaded!");
+				return true;
 			}
 		} else {
 			sender.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "You do not have permission to do that!");
+			return false;
 		}
 		
 		return false;

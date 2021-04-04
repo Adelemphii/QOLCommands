@@ -29,7 +29,7 @@ public class RollCommand implements CommandExecutor {
 			if(args.length == 1) {
 				if(isNum(args[0])) {
 					
-					if(Integer.parseInt(args[0]) < 0) {
+					if(Integer.parseInt(args[0]) <= 0) {
 						sender.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "You can only roll positive numbers!");
 						return false;
 					}
