@@ -91,6 +91,7 @@ public class LocalRollCommand implements CommandExecutor {
 				player.sendMessage(ChatColor.YELLOW + roller.getDisplayName() + ChatColor.YELLOW + " (" + roller.getName() + ")"
 						+ " has rolled a " + ChatColor.GOLD + randomNumber + ChatColor.YELLOW + " out of "
 						+ ChatColor.GOLD + input + ChatColor.YELLOW);
+
 			}
 		}
 	}

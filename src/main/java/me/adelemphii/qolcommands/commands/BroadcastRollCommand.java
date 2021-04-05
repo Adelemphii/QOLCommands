@@ -33,7 +33,6 @@ public class BroadcastRollCommand implements CommandExecutor {
                         // Get a random number from 0 to (input+1)
                         int randomNumber = rand.nextInt((input - min) + 1) + min;
 
-
                         // Check if the sender is a player, if so,
                         // then broadcast with display name.
                         // If not, broadcast without.

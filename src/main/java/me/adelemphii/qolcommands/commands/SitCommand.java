@@ -35,6 +35,7 @@ public class SitCommand implements CommandExecutor {
 					as.setGravity(false);
 					as.setCustomName("sitting");
 					as.setCustomNameVisible(false);
+
 					return true;
 				} else {
 					player.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "You cannot sit on air!");

@@ -15,3 +15,5 @@ commands:
     description: Using /broadcastroll <number> will allow you to roll a random number but it will broadcast to everyone on the server!
     aliases:
       - broll
+  carry:
+    description: Using /carry <player> will allow you to pick up a nearby player and carry them around!
