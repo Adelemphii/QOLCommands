@@ -1,7 +1,7 @@
 # QOLCommands
 A simple grouping of "Quality of Life" commands in one repo. Feel free to add on to this.
 
-## Commansd
+## Commands
 - /walk - Slows players to a 'walking' speed
 - /sit - Lets players sit where they stand
 - /roll <number> - Lets players roll a number locally
