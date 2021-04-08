@@ -17,3 +17,5 @@ commands:
       - broll
   carry:
     description: Using /carry <player> will allow you to pick up a nearby player and carry them around!
+  walk:
+    description: Using /walk will allow you to walk at a slower speed!
