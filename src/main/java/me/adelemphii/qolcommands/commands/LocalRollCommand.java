@@ -25,7 +25,7 @@ public class LocalRollCommand implements CommandExecutor {
 		if(sender.hasPermission("qolcommands.roll") || sender.isOp()) {
 			if (cmd.getName().equalsIgnoreCase("roll")) {
 
-				if (args.length == 1) {
+				if (args.length >= 1) {
 
 					// Make sure /roll <input> is a number
 					if (isNum(args[0])) {

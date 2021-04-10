@@ -14,6 +14,7 @@ import me.adelemphii.qolcommands.events.SitEvents;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.logging.Level;
 
 public class QOLCommands extends JavaPlugin {
 
@@ -59,14 +60,48 @@ public class QOLCommands extends JavaPlugin {
 	// If the player is in /walk already, remove them and set their speed to default (default is .2f)
 	// Else, add them to playerIsWalking and set their walk speed to .1f
 	public void changeWalkSpeed(Player player) {
-		if(playerIsWalking.containsKey(player.getUniqueId())) {
-			player.setWalkSpeed(.2f);
+
+		if(this.getConfig().getDouble("walk-speed") <= .2f && this.getConfig().getDouble("walk-speed") >= 0) {
+			if(playerIsWalking.containsKey(player.getUniqueId())) {
+				player.setWalkSpeed(.2f);
+				playerIsWalking.remove(player.getUniqueId());
+				player.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "You are no longer walking at a leisurely pace.");
+			} else {
+				player.setWalkSpeed((float) this.getConfig().getDouble("walk-speed"));
+				playerIsWalking.put(player.getUniqueId(), true);
+				player.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "You are now walking at a leisurely pace.");
+			}
+		} else {
+
+			if(playerIsWalking.containsKey(player.getUniqueId())) {
+				player.setWalkSpeed(.2f);
+				playerIsWalking.remove(player.getUniqueId());
+				player.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "You are no longer walking at a leisurely pace.");
+			} else {
+				this.getLogger().log(Level.WARNING, "The walk-speed option in the config.yml was set to something higher than .2f or less than 0f, it shall default to .1f until fixed");
+				player.setWalkSpeed(.1f);
+				playerIsWalking.put(player.getUniqueId(), true);
+				player.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "You are now walking at a leisurely pace.");
+			}
+		}
+
+	}
+
+	public void changeWalkSpeed(Player player, float speed) {
+		if(speed == .2f) {
+			player.setWalkSpeed(speed);
 			playerIsWalking.remove(player.getUniqueId());
 			player.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "You are no longer walking at a leisurely pace.");
-		} else {
-			player.setWalkSpeed(.1f);
+			return;
+		}
+		if(speed <= .2f && speed >= 0) {
+			player.setWalkSpeed(speed);
 			playerIsWalking.put(player.getUniqueId(), true);
-			player.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "You are now walking at a leisurely pace.");
+			player.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "You are now walking at a leisurely pace of " + speed);
+		} else if(speed < 0) {
+			player.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "That number is too small! (Choose a number between 0 and .2)");
+		} else if(speed > .2f) {
+			player.sendMessage(ChatColor.DARK_RED + "[!] " + ChatColor.RED + "" + ChatColor.ITALIC + "That number is too large! (Choose a number between 0 and .2)");
 		}
 	}
 

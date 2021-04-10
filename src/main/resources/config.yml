@@ -1,2 +1,4 @@
 local-roll-range: 10
 simple-farming: true
+disable-crop-trample: true
+walk-speed: .1

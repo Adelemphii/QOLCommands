@@ -19,7 +19,7 @@ public class SitCommand implements CommandExecutor {
 			if (cmd.getName().equalsIgnoreCase("sit")) {
 
 				if(!(sender instanceof Player)) {
-					sender.sendMessage("Players only!");
+					sender.sendMessage("[!] QOLCommands: Only players can /sit!");
 					return false;
 				}
 				Player player = (Player) sender;

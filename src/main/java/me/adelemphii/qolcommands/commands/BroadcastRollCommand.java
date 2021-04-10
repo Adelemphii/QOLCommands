@@ -16,7 +16,7 @@ public class BroadcastRollCommand implements CommandExecutor {
         // Check if CommandSender has permission
         if(sender.hasPermission("qolcommands.roll.broadcast") || sender.isOp()) {
             if (cmd.getName().equalsIgnoreCase("broadcastroll") || cmd.getLabel().equalsIgnoreCase("broll")) {
-                if (args.length == 1) {
+                if (args.length >= 1) {
                     // Make sure /broadcastroll <input> is a number
                     if (isNum(args[0])) {
 

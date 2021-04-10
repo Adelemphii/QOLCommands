@@ -16,4 +16,10 @@ A simple grouping of "Quality of Life" commands in one repo. Feel free to add on
 - qolcommands.roll.broadcast | This permission allows users to use the /broadcastroll command
 - qolcommands.admin | This permission allows users to use the /qolreload command
 
+## Config
+- local-roll-range: | This is the distance in blocks for how far players can see the output from the /roll command 
+- simple-farming: | This enables left click (with a hoe) and right click (barehanded and with items) farming of crops
+- disable-crop-trample: | With this enabled, you can prevent players from jumping on farmland and crushing it
+- walk-speed: | Between 0 and .2, this value is for the default /walk speed (If you put something outside that range, it defaults to .1 and gives an error in the console!)
+
 [Plugin Showcase](https://www.youtube.com/watch?v=yAISOvR_uc0)

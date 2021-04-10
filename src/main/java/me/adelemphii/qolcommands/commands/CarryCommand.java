@@ -29,7 +29,7 @@ public class CarryCommand implements CommandExecutor {
         if(sender.hasPermission("qolcommands.carry")) {
             if (cmd.getName().equalsIgnoreCase("carry")) {
                 if (!(sender instanceof Player)) {
-                    sender.sendMessage("Only players can carry other players.");
+                    sender.sendMessage("[!] QOLCommands: Only players can carry other players.");
                     return false;
                 }
 
