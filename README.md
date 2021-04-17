@@ -3,7 +3,7 @@ A simple grouping of "Quality of Life" commands in one repo. Feel free to add on
 
 ## Commands
 - /walk - Slows players to a 'walking' speed set in the config
-- /walk <number> - Allows players to choose a speed between 0 and .2
+- /walk (number) - Allows players to choose a speed between 0 and .2
 - /sit - Lets players sit where they stand
 - /roll <number> - Lets players roll a number locally
 - /broadcastroll <number> - Lets players roll a number which is broadcast to the whole server
