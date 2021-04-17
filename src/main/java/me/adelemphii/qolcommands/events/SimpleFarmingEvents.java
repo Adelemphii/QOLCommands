@@ -2,7 +2,7 @@ package me.adelemphii.qolcommands.events;
 
 import java.util.Random;
 
-import org.bukkit.Material;
+import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
 import org.bukkit.event.EventHandler;
@@ -24,8 +24,8 @@ public class SimpleFarmingEvents implements Listener {
 
 	@EventHandler
 	public void onInteract(PlayerInteractEvent event) {
-		// If simple-farming is set to true, run the rest of the checks
-		if(plugin.getConfig().getBoolean("simple-farming")) {
+		if (plugin.getConfig().getBoolean("simple-farming")) {
+			// If simple-farming is set to true, run the rest of the checks
 			if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				Block block = event.getClickedBlock();
 
@@ -48,8 +48,9 @@ public class SimpleFarmingEvents implements Listener {
 			}
 
 			// Check if the player is breaking the block
-			if(event.getAction() == Action.LEFT_CLICK_BLOCK) {
+			if (event.getAction() == Action.LEFT_CLICK_BLOCK) {
 				Block block = event.getClickedBlock();
+				Location location = block.getLocation();
 				ItemStack item = event.getPlayer().getInventory().getItemInMainHand();
 
 				// If the block has age, it's a block we need
@@ -76,14 +77,7 @@ public class SimpleFarmingEvents implements Listener {
 						event.setCancelled(true);
 						age.setAge(1);
 						block.setBlockData(age);
-					}
-				}
-			}
-			// Disable crop trampling if "disable-crop-trample" is true in config
-			if(plugin.getConfig().getBoolean("disable-crop-trample")) {
-				if (event.getAction() == Action.PHYSICAL) {
-					if(event.getClickedBlock().getType() == Material.FARMLAND) {
-						event.setCancelled(true);
+
 					}
 				}
 			}

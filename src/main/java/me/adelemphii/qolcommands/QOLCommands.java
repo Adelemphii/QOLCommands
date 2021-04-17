@@ -1,6 +1,7 @@
 package me.adelemphii.qolcommands;
 
 import me.adelemphii.qolcommands.commands.*;
+import me.adelemphii.qolcommands.events.CropTrampleEvent;
 import me.adelemphii.qolcommands.events.WalkEvents;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -51,7 +52,8 @@ public class QOLCommands extends JavaPlugin {
 		this.getCommand("broadcastroll").setExecutor(new BroadcastRollCommand());
 		this.getCommand("carry").setExecutor(new CarryCommand(this));
 		this.getCommand("walk").setExecutor(new WalkCommand(this));
-		
+
+		pluginManager.registerEvents(new CropTrampleEvent(this), this);
 		pluginManager.registerEvents(new SitEvents(), this);
 		pluginManager.registerEvents(new SimpleFarmingEvents(this), this);
 		pluginManager.registerEvents(new WalkEvents(this), this);
