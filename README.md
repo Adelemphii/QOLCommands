@@ -1,6 +1,9 @@
 # QOLCommands
 A simple grouping of "Quality of Life" commands in one repo. Feel free to add on to this.
 
+**If players 'cannot sleep' as in are forced out of the bed, you need to set the "essentials.sleepingignored" permission to false**
+## Notes:
+
 ## Commands
 - /walk - Slows players to a 'walking' speed set in the config
 - /walk (number) - Allows players to choose a speed between 0 and .2
@@ -18,6 +21,8 @@ A simple grouping of "Quality of Life" commands in one repo. Feel free to add on
 - qolcommands.admin | This permission allows users to use the /qolreload command
 
 ## Config
+- player-sleep-divide-amount: | This is determines the amount of players needed to sleep, the math is: "online-players / player-sleep-divide-amount". So a 2 would be half the online players!
+- better-sleep: | This enables the ability to let the night be skipped if a certain amount of online players are sleeping!
 - local-roll-range: | This is the distance in blocks for how far players can see the output from the /roll command 
 - simple-farming: | This enables left click (with a hoe) and right click (barehanded and with items) farming of crops
 - disable-crop-trample: | With this enabled, you can prevent players from jumping on farmland and crushing it

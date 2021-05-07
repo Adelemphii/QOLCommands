@@ -19,3 +19,5 @@ commands:
     description: Using /carry <player> will allow you to pick up a nearby player and carry them around!
   walk:
     description: Using /walk will allow you to walk at a slower speed!
+  qolcommands:
+    description: Shows the help menu with all the commands!

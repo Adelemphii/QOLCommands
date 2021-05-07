@@ -36,9 +36,16 @@ public class SimpleFarmingEvents implements Listener {
 					// We don't need the block if it isn't max age, so stop doing things
 					if (age.getAge() != age.getMaximumAge()) return;
 
-					// Drop a random amount from 1-6 wheat, and many seeds
+					// Drop a random amount from 1-4 wheat, and many seeds
+					// 6 was too high so I lowered it to 4
 					for (ItemStack i : block.getDrops()) {
-						i.setAmount(i.getAmount() + random.nextInt(6));
+
+						if(!i.getType().toString().endsWith("SEEDS") &&
+								!i.getType().toString().equalsIgnoreCase("POTATO") &&
+								!i.getType().toString().equalsIgnoreCase("CARROT")) {
+
+							i.setAmount(i.getAmount() + random.nextInt(4));
+						}
 						block.getWorld().dropItemNaturally(block.getLocation(), i);
 					}
 					// Set the age of the crop right-clicked back to 1
@@ -66,10 +73,14 @@ public class SimpleFarmingEvents implements Listener {
 							return;
 						}
 
-						// Drop anywhere between 1 and 6 wheat, and default amount of seeds
+						// Drop anywhere between 1 and 4 wheat, and default amount of seeds
+						// 6 was too high so I lowered it to 4
 						for (ItemStack i : block.getDrops()) {
-							if (!i.getType().toString().endsWith("SEEDS")) {
-								i.setAmount(i.getAmount() + random.nextInt(6));
+							if (!i.getType().toString().endsWith("SEEDS") &&
+									!i.getType().toString().equalsIgnoreCase("POTATO") &&
+									!i.getType().toString().equalsIgnoreCase("CARROT")) {
+
+								i.setAmount(i.getAmount() + random.nextInt(4));
 							}
 							block.getWorld().dropItemNaturally(block.getLocation(), i);
 						}

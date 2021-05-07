@@ -1,16 +1,13 @@
 package me.adelemphii.qolcommands;
 
 import me.adelemphii.qolcommands.commands.*;
-import me.adelemphii.qolcommands.events.CropTrampleEvent;
-import me.adelemphii.qolcommands.events.WalkEvents;
+import me.adelemphii.qolcommands.events.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.block.data.type.Bed;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import me.adelemphii.qolcommands.events.SimpleFarmingEvents;
-import me.adelemphii.qolcommands.events.SitEvents;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,7 +49,9 @@ public class QOLCommands extends JavaPlugin {
 		this.getCommand("broadcastroll").setExecutor(new BroadcastRollCommand());
 		this.getCommand("carry").setExecutor(new CarryCommand(this));
 		this.getCommand("walk").setExecutor(new WalkCommand(this));
+		this.getCommand("qolcommands").setExecutor(new HelpCommand(this));
 
+		pluginManager.registerEvents(new BedSleepEvents(this), this);
 		pluginManager.registerEvents(new CropTrampleEvent(this), this);
 		pluginManager.registerEvents(new SitEvents(), this);
 		pluginManager.registerEvents(new SimpleFarmingEvents(this), this);
