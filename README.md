@@ -1,9 +1,6 @@
 # QOLCommands
 A simple grouping of "Quality of Life" commands in one repo. Feel free to add on to this.
 
-**If players 'cannot sleep' as in are forced out of the bed, you need to set the "essentials.sleepingignored" permission to false**
-## Notes:
-
 ## Commands
 - /walk - Slows players to a 'walking' speed set in the config
 - /walk (number) - Allows players to choose a speed between 0 and .2
