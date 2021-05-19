@@ -1,8 +1,6 @@
 package me.adelemphii.qolcommands.events;
 
-import java.util.Random;
-
-import org.bukkit.Location;
+import me.adelemphii.qolcommands.QOLCommands;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
 import org.bukkit.event.EventHandler;
@@ -11,7 +9,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import me.adelemphii.qolcommands.QOLCommands;
+import java.util.Random;
 
 public class SimpleFarmingEvents implements Listener {
 
@@ -57,7 +55,6 @@ public class SimpleFarmingEvents implements Listener {
 			// Check if the player is breaking the block
 			if (event.getAction() == Action.LEFT_CLICK_BLOCK) {
 				Block block = event.getClickedBlock();
-				Location location = block.getLocation();
 				ItemStack item = event.getPlayer().getInventory().getItemInMainHand();
 
 				// If the block has age, it's a block we need
