@@ -47,7 +47,7 @@ public class QOLCommands extends JavaPlugin {
 		this.getCommand("roll").setExecutor(new LocalRollCommand(this));
 		this.getCommand("qolreload").setExecutor(new ConfigReloadCommand(this));
 		this.getCommand("broadcastroll").setExecutor(new BroadcastRollCommand());
-		this.getCommand("carry").setExecutor(new CarryCommand(this));
+		this.getCommand("carry").setExecutor(new CarryCommandRewrite());
 		this.getCommand("walk").setExecutor(new WalkCommand(this));
 		this.getCommand("qolcommands").setExecutor(new HelpCommand(this));
 
